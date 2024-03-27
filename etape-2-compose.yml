@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+    nginx-proxy:
+        image: "jwilder/nginx-proxy"
+        ports:
+            - "8080:80"
+        volumes:
+            - "/var/run/docker.sock:/tmp/docker.sock"
+    nginx-0:
+        image: "nginx"
+        environment:
+            - "VIRTUAL_HOST=m"
+    nginx-1:
+        image: "nginx"
+        environment:
+            - "VIRTUAL_HOST=m"
+    nginx-2:
+        image: "nginx"
+        environment:
+            - "VIRTUAL_HOST=m"
+    nginx-3:
+        image: "nginx"
+        environment:
+            - "VIRTUAL_HOST=m"
